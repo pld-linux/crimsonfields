@@ -5,12 +5,12 @@
 Summary:	A hex-based tactical war game
 Summary(pl):	Taktyczna gra wojenna oparta na hex
 Name:		crimsonfields
-Version:	0.4.2
+Version:	0.4.3
 Release:	0.1
 License:	GPL	
 Group:		Games/Strategy
 Source0:	http://crimson.seul.org/files/crimson-%{version}.tar.bz2
-# Source0-md5:	a9bb1856fd7f2c5329aadec339082551
+# Source0-md5:	92dba4e4fd82cefce91a1d463f761833
 Patch0:		%{name}-autothingies.patch
 URL:		http://crimson.seul.org/
 BuildRequires:	SDL-devel
@@ -58,11 +58,13 @@ tak¿e graæ na oryginalnych mapach Battle Isle, je¶li mamy kopiê gry.
 %patch0 -p1
 
 %build
+cp %{_datadir}/automake/config.sub config/.
+cp %{_datadir}/automake/config.guess config/.
 glib-gettextize --copy --force
 %{__aclocal}
 %{__autoconf}
-%{__autoheader}
-%{__automake}
+#%%{__autoheader}
+#%%{__automake}
 %configure \
 	--enable-cfed \
 	--enable-bi2cf \
@@ -82,6 +84,17 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/crimson
+%dir %{_datadir}/crimson
+%{_datadir}/crimson/*.ttf
+%{_datadir}/crimson/cf.dat
+%{_datadir}/crimson/default.*
+%{_datadir}/crimson/*.bmp
+%{_datadir}/crimson/levels
+%dir %{_datadir}/crimson/locale
+%lang(de) %{_datadir}/crimson/locale/de.dat
+%lang(en) %{_datadir}/crimson/locale/en.dat
+%lang(pl) %{_datadir}/crimson/locale/pl.dat
+%{_datadir}/crimson/music
+%{_datadir}/crimson/sound
 %{_mandir}/man*/*
 %{_pixmapsdir}/crimson.png
