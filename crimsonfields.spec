@@ -3,7 +3,7 @@
 #    fails to run in chrooted environment:
 #	Error: Could not init SDL. No available video device.
 Summary:	A hex-based tactical war game
-#Summary(pl):	-
+Summary(pl):	Taktyczna gra wojenna oparta na hex
 Name:		crimsonfields
 Version:	0.4.1
 Release:	0.1
@@ -13,31 +13,45 @@ Source0:	http://crimson.seul.org/files/crimson-%{version}.tar.bz2
 # Source0-md5:	28cef75cc9a871421cf34ed487921c3f
 Patch0:		%{name}-autothingies.patch
 URL:		http://crimson.seul.org/
+BuildRequires:	SDL-devel
+BuildRequires:	SDL_sound-devel
+BuildRequires:	SDL_ttf-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib2-devel
 BuildRequires:	libstdc++-devel
-BuildRequires:	SDL-devel
-BuildRequires:	SDL_sound-devel
-BuildRequires:	SDL_ttf-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Crimson Fields is a tactical war game in the tradition of Battle Isle for
-one or two players.
+Crimson Fields is a tactical war game in the tradition of Battle Isle
+for one or two players.
 
 The outcome of the war lies in your hands. You decide which units are
-sent to the front lines, and when to unleash the reserves. Your mission
-objectives range from defending strategically vital locations to simply
-destroying all enemy forces in the area. Protect supply convoys or raid
-enemy facilities to uncover technological secrets or fill your storage
-bays so you can repair damaged units or build new ones in your own
-factories. Lead your troops to victory!
+sent to the front lines, and when to unleash the reserves. Your
+mission objectives range from defending strategically vital locations
+to simply destroying all enemy forces in the area. Protect supply
+convoys or raid enemy facilities to uncover technological secrets or
+fill your storage bays so you can repair damaged units or build new
+ones in your own factories. Lead your troops to victory!
 
-Tools are available to create custom maps and campaigns. You can also play
-the original Battle Isle maps if you have a copy of the game.
+Tools are available to create custom maps and campaigns. You can also
+play the original Battle Isle maps if you have a copy of the game.
 
-#%description -l pl
+%description -l pl
+Crimson Fields to taktyczna gra wojenna dla jednego lub dwóch graczy,
+utrzymana w tradycji Battle Isle.
+
+Wynik gry le¿y w Twoich rêkach. Ty decydujesz, które jednostki s±
+wysy³ane na linie frontu i kiedy wypu¶ciæ rezerwê. Cele misji
+rozci±gaj± siê od obrony strategicznych miejsc po zwyk³e zniszczenie
+wszystkich si³ wroga w terenie. Zabezpiecz konwoje dostawcze albo
+najed¼ na wroga, aby odkryæ jego sekrety technologiczne lub uzupe³niæ
+swoje zapasy, co umo¿liwi naprawê uszkodzonych jednostek albo
+zbudowanie nowych we w³asnych fabrykach. Prowad¼ swoje wojsko do
+zwyciêstwa!
+
+Dostêpne s± narzêdzia do tworzenia w³asnych map i kampanii. Mo¿na
+tak¿e graæ na oryginalnych mapach Battle Isle, je¶li mamy kopiê gry.
 
 %prep
 %setup -q -n crimson-%{version}
@@ -52,7 +66,7 @@ glib-gettextize --copy --force
 %configure \
 	--enable-cfed \
 	--enable-bi2cf \
-	--enable-comet 
+	--enable-comet
 %{__make}
 
 %install
