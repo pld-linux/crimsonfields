@@ -1,3 +1,7 @@
+# ToDo:
+#  - while building in levels/ directory, it calls ../tools/cfed which 
+#    fails to run in chrooted environment:
+#	Error: Could not init SDL. No available video device.
 Summary:	A hex-based tactical war game
 #Summary(pl):	-
 Name:		crimsonfields
@@ -9,7 +13,12 @@ Source0:	http://crimson.seul.org/files/crimson-%{version}.tar.bz2
 # Source0-md5:	28cef75cc9a871421cf34ed487921c3f
 Patch0:		%{name}-autothingies.patch
 URL:		http://crimson.seul.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	glib2-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	SDL-devel
+BuildRequires:	SDL_sound-devel
 BuildRequires:	SDL_ttf-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -35,8 +44,6 @@ the original Battle Isle maps if you have a copy of the game.
 %patch0 -p1
 
 %build
-# if ac/am/* rebuilding is necessary, do it in this order and add
-# appropriate BuildRequires
 glib-gettextize --copy --force
 %{__aclocal}
 %{__autoconf}
