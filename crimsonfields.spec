@@ -7,7 +7,7 @@ Summary(pl):	Taktyczna gra wojenna oparta na hex
 Name:		crimsonfields
 Version:	0.4.3
 Release:	0.1
-License:	GPL	
+License:	GPL
 Group:		Games/Strategy
 Source0:	http://crimson.seul.org/files/crimson-%{version}.tar.bz2
 # Source0-md5:	92dba4e4fd82cefce91a1d463f761833
