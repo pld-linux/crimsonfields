@@ -1,16 +1,12 @@
-# ToDo:
-#  - while building in levels/ directory, it calls ../tools/cfed which 
-#    fails to run in chrooted environment:
-#	Error: Could not init SDL. No available video device.
 Summary:	A hex-based tactical war game
 Summary(pl):	Taktyczna gra wojenna oparta na hex
 Name:		crimsonfields
-Version:	0.4.3
-Release:	0.1
+Version:	0.4.7
+Release:	1
 License:	GPL
-Group:		Games/Strategy
+Group:		X11/Applications/Games/Strategy
 Source0:	http://crimson.seul.org/files/crimson-%{version}.tar.bz2
-# Source0-md5:	92dba4e4fd82cefce91a1d463f761833
+# Source0-md5:	17b3278f1fcd23066f951c2d55eb94b1
 Patch0:		%{name}-autothingies.patch
 URL:		http://crimson.seul.org/
 BuildRequires:	SDL-devel
@@ -92,8 +88,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/crimson/levels
 %dir %{_datadir}/crimson/locale
 %lang(de) %{_datadir}/crimson/locale/de.dat
+%lang(fr) %{_datadir}/crimson/locale/fr.dat
 %lang(en) %{_datadir}/crimson/locale/en.dat
 %lang(pl) %{_datadir}/crimson/locale/pl.dat
+%lang(sk) %{_datadir}/crimson/locale/sk.dat
 %{_datadir}/crimson/music
 %{_datadir}/crimson/sound
 %{_mandir}/man*/*
