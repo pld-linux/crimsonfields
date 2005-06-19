@@ -8,6 +8,7 @@ Group:		X11/Applications/Games/Strategy
 Source0:	http://crimson.seul.org/files/crimson-%{version}.tar.bz2
 # Source0-md5:	460920e64b07ea0ef139a0f5d51bd2d9
 Patch0:		%{name}-autothingies.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://crimson.seul.org/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_sound-devel
@@ -52,6 +53,7 @@ tak¿e graæ na oryginalnych mapach Battle Isle, je¶li mamy kopiê gry.
 %prep
 %setup -q -n crimson-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp %{_datadir}/automake/config.sub config/.
