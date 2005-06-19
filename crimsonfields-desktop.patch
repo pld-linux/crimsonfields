@@ -1,0 +1,19 @@
+diff -urN crimson-0.4.8/crimson.desktop fix/crimson-0.4.8/crimson.desktop
+--- crimson-0.4.8/crimson.desktop	2005-03-09 17:29:54.000000000 +0100
++++ fix/crimson-0.4.8/crimson.desktop	2005-06-19 19:44:13.000000000 +0200
+@@ -4,11 +4,14 @@
+ Name=Crimson Fields
+ GenericName=Turn-Based Strategy Game
+ GenericName[de]=Rundenbasiertes Strategiespiel
++GenericName[pl]=Turowa gra strategiczna
+ Comment=Lead your troops to victory
+ Comment[de]=Führe deine Truppen zum Sieg
++Comment[pl]=Poprowadź swoje oddziały do zwycięstwa
+ TryExec=crimson
+ Exec=crimson
+ Icon=crimson.png
+ Terminal=false
+ Type=Application
+ Categories=Application;Game;StrategyGame;
++# vi: encoding=utf-8
+\ Brak znaku nowej linii na ko�cu pliku
