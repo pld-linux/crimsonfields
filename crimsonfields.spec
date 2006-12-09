@@ -1,16 +1,23 @@
+#
+# Conditional build:
+%bcond_without	SDL_mixer	# build without SDL_mixer
+%bcond_without	SDL_net		# build without SDL_net
+#
 Summary:	A hex-based tactical war game
 Summary(pl):	Taktyczna gra wojenna oparta na hex
 Name:		crimsonfields
-Version:	0.4.9
+Version:	0.5.0
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications/Games/Strategy
 Source0:	http://crimson.seul.org/files/crimson-%{version}.tar.bz2
-# Source0-md5:	c1ae6de5637efb9223b70c29e10de75b
+# Source0-md5:	ef0a17a7cfd55abdbdea5c122222a6ca
 Patch0:		%{name}-autothingies.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://crimson.seul.org/
-BuildRequires:	SDL-devel
+BuildRequires:	SDL-devel >= 1.1.5
+%{?with_SDL_mixer:BuildRequires:	SDL_mixer-devel}
+%{?with_SDL_net:BuildRequires:	SDL_net-devel >= 1.2.6}
 BuildRequires:	SDL_sound-devel
 BuildRequires:	SDL_ttf-devel
 BuildRequires:	autoconf
