@@ -6,12 +6,12 @@
 Summary:	A hex-based tactical war game
 Summary(pl):	Taktyczna gra wojenna oparta na hex
 Name:		crimsonfields
-Version:	0.5.0
+Version:	0.5.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games/Strategy
 Source0:	http://crimson.seul.org/files/crimson-%{version}.tar.bz2
-# Source0-md5:	ef0a17a7cfd55abdbdea5c122222a6ca
+# Source0-md5:	71d5137ede548a2108198acac44d3ab4
 Patch0:		%{name}-autothingies.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://crimson.seul.org/
@@ -68,8 +68,7 @@ cp %{_datadir}/automake/config.guess config/.
 glib-gettextize --copy --force
 %{__aclocal}
 %{__autoconf}
-#%%{__autoheader}
-#%%{__automake}
+%{__automake}
 %configure \
 	--enable-cfed \
 	--enable-bi2cf \
@@ -99,8 +98,11 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_datadir}/crimson/locale/de.dat
 %lang(fr) %{_datadir}/crimson/locale/fr.dat
 %lang(en) %{_datadir}/crimson/locale/en.dat
+%lang(hu) %{_datadir}/crimson/locale/hu.dat
+%lang(it) %{_datadir}/crimson/locale/it.dat
 %lang(pl) %{_datadir}/crimson/locale/pl.dat
 %lang(sk) %{_datadir}/crimson/locale/sk.dat
+%lang(sr) %{_datadir}/crimson/locale/sr.dat
 %{_datadir}/crimson/music
 %{_datadir}/crimson/sound
 %{_desktopdir}/*.desktop
