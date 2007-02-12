@@ -4,7 +4,7 @@
 %bcond_without	SDL_net		# build without SDL_net
 #
 Summary:	A hex-based tactical war game
-Summary(pl):	Taktyczna gra wojenna oparta na hex
+Summary(pl.UTF-8):   Taktyczna gra wojenna oparta na hex
 Name:		crimsonfields
 Version:	0.5.1
 Release:	1
@@ -41,21 +41,21 @@ ones in your own factories. Lead your troops to victory!
 Tools are available to create custom maps and campaigns. You can also
 play the original Battle Isle maps if you have a copy of the game.
 
-%description -l pl
-Crimson Fields to taktyczna gra wojenna dla jednego lub dwóch graczy,
+%description -l pl.UTF-8
+Crimson Fields to taktyczna gra wojenna dla jednego lub dwÃ³ch graczy,
 utrzymana w tradycji Battle Isle.
 
-Wynik gry le¿y w Twoich rêkach. Ty decydujesz, które jednostki s±
-wysy³ane na linie frontu i kiedy wypu¶ciæ rezerwê. Cele misji
-rozci±gaj± siê od obrony strategicznych miejsc po zwyk³e zniszczenie
-wszystkich si³ wroga w terenie. Zabezpiecz konwoje dostawcze albo
-najed¼ na wroga, aby odkryæ jego sekrety technologiczne lub uzupe³niæ
-swoje zapasy, co umo¿liwi naprawê uszkodzonych jednostek albo
-zbudowanie nowych we w³asnych fabrykach. Prowad¼ swoje wojsko do
-zwyciêstwa!
+Wynik gry leÅ¼y w Twoich rÄ™kach. Ty decydujesz, ktÃ³re jednostki sÄ…
+wysyÅ‚ane na linie frontu i kiedy wypuÅ›ciÄ‡ rezerwÄ™. Cele misji
+rozciÄ…gajÄ… siÄ™ od obrony strategicznych miejsc po zwykÅ‚e zniszczenie
+wszystkich siÅ‚ wroga w terenie. Zabezpiecz konwoje dostawcze albo
+najedÅº na wroga, aby odkryÄ‡ jego sekrety technologiczne lub uzupeÅ‚niÄ‡
+swoje zapasy, co umoÅ¼liwi naprawÄ™ uszkodzonych jednostek albo
+zbudowanie nowych we wÅ‚asnych fabrykach. ProwadÅº swoje wojsko do
+zwyciÄ™stwa!
 
-Dostêpne s± narzêdzia do tworzenia w³asnych map i kampanii. Mo¿na
-tak¿e graæ na oryginalnych mapach Battle Isle, je¶li mamy kopiê gry.
+DostÄ™pne sÄ… narzÄ™dzia do tworzenia wÅ‚asnych map i kampanii. MoÅ¼na
+takÅ¼e graÄ‡ na oryginalnych mapach Battle Isle, jeÅ›li mamy kopiÄ™ gry.
 
 %prep
 %setup -q -n crimson-%{version}
