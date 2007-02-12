@@ -4,7 +4,7 @@
 %bcond_without	SDL_net		# build without SDL_net
 #
 Summary:	A hex-based tactical war game
-Summary(pl.UTF-8):   Taktyczna gra wojenna oparta na hex
+Summary(pl.UTF-8):	Taktyczna gra wojenna oparta na hex
 Name:		crimsonfields
 Version:	0.5.1
 Release:	1
