@@ -6,12 +6,12 @@
 Summary:	A hex-based tactical war game
 Summary(pl.UTF-8):	Taktyczna gra wojenna oparta na hex
 Name:		crimsonfields
-Version:	0.5.2
+Version:	0.5.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games/Strategy
 Source0:	http://crimson.seul.org/files/crimson-%{version}.tar.bz2
-# Source0-md5:	a6024dd95c8767cee9907475bf827291
+# Source0-md5:	9e71bc8c12ddadf42136a3e07ae86a2c
 Patch0:		%{name}-autothingies.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://crimson.seul.org/
@@ -47,15 +47,16 @@ utrzymana w tradycji Battle Isle.
 
 Wynik gry leży w Twoich rękach. Ty decydujesz, które jednostki są
 wysyłane na linie frontu i kiedy wypuścić rezerwę. Cele misji
-rozciągają się od obrony strategicznych miejsc po zwykłe zniszczenie
-wszystkich sił wroga w terenie. Zabezpiecz konwoje dostawcze albo
-najedź na wroga, aby odkryć jego sekrety technologiczne lub uzupełnić
-swoje zapasy, co umożliwi naprawę uszkodzonych jednostek albo
-zbudowanie nowych we własnych fabrykach. Prowadź swoje wojsko do
-zwycięstwa!
+rozciągają się od obrony strategicznych miejsc po zwykłe
+zniszczenie wszystkich sił wroga w terenie. Zabezpiecz konwoje
+dostawcze albo najedź na wroga, aby odkryć jego sekrety
+technologiczne lub uzupełnić swoje zapasy, co umożliwi naprawę
+uszkodzonych jednostek albo zbudowanie nowych we własnych fabrykach.
+Prowadź swoje wojsko do zwycięstwa!
 
 Dostępne są narzędzia do tworzenia własnych map i kampanii. Można
-także grać na oryginalnych mapach Battle Isle, jeśli mamy kopię gry.
+także grać na oryginalnych mapach Battle Isle, jeśli mamy kopię
+gry.
 
 %prep
 %setup -q -n crimson-%{version}
@@ -65,7 +66,7 @@ także grać na oryginalnych mapach Battle Isle, jeśli mamy kopię gry.
 %build
 cp %{_datadir}/automake/config.sub config/.
 cp %{_datadir}/automake/config.guess config/.
-glib-gettextize --copy --force
+%{__glib_gettextize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
@@ -103,6 +104,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(pl) %{_datadir}/crimson/locale/pl.dat
 %lang(sk) %{_datadir}/crimson/locale/sk.dat
 %lang(sr) %{_datadir}/crimson/locale/sr.dat
+%lang(tr) %{_datadir}/crimson/locale/tr.dat
 %{_datadir}/crimson/music
 %{_datadir}/crimson/sound
 %{_desktopdir}/*.desktop
