@@ -1,6 +1,6 @@
---- crimson-0.5.1/crimson.desktop~	2007-01-26 22:55:42.000000000 +0100
-+++ crimson-0.5.1/crimson.desktop	2007-01-26 22:59:20.000000000 +0100
-@@ -17,3 +17,4 @@
+--- crimson-0.5.3/crimson.desktop.orig	2009-03-01 00:00:00.000000000 +0000
++++ crimson-0.5.3/crimson.desktop	2009-03-01 00:00:00.000000000 +0000
+@@ -20,3 +20,4 @@
  Terminal=false
  Type=Application
  Categories=Application;Game;StrategyGame;
